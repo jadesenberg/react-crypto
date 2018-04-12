@@ -1,6 +1,7 @@
 import React from 'react';
 import { API_URL } from '../../config';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Loading from '../common/Loading';
 import { renderPercentChange } from '../../helpers';
 import './Detail.css';
@@ -98,6 +99,8 @@ class Detail extends React.Component {
                         {currency.totalSupply}
                     </div>
                 </div>
+
+                <Link to="/" className="Detail-link">go to homepage</Link>
             </div>
         );
     }
