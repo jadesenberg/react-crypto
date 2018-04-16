@@ -1,7 +1,6 @@
 .Detail {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 30px;
     margin-bottom: 40px;
     padding: 0 60px;
@@ -55,4 +54,9 @@
     border-radius: 4px;
     padding: 18px;
     transition: border .2s;
+    align-self: center;
+  }
+
+  .Detail-chart-container {
+    margin-top: 40px;
   }

@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 import Loading from '../common/Loading';
 import { renderPercentChange } from '../../helpers';
 import './Detail.css';
+import DayChart from './chart/DayChart';
+import HourChart from './chart/HourChart';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
 
 class Detail extends React.Component {
     constructor() {
@@ -98,6 +103,22 @@ class Detail extends React.Component {
                         <span className="Detail-title">Total supply</span>
                         {currency.totalSupply}
                     </div>
+                </div>
+
+                <div className="Detail-chart-container">
+                    <Tabs>
+                        <TabList>
+                            <Tab>Value last 30 days</Tab>
+                            <Tab>Value last 24 hours</Tab>
+                        </TabList>
+
+                        <TabPanel>
+                            <DayChart currency={currency.symbol} />
+                        </TabPanel>
+                        <TabPanel>
+                            <HourChart currency={currency.symbol} />
+                        </TabPanel>
+                    </Tabs>
                 </div>
 
                 <Link to="/" className="Detail-link">go to homepage</Link>
